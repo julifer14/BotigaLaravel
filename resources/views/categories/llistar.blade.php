@@ -1,0 +1,36 @@
+@extends('base')
+
+@section('title')
+Llistat Categories
+@stop
+
+
+@section('title_block')
+Llistat Categories
+@stop
+
+@section('contingut')
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Accions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($categories as $c)
+        <tr>
+            <th scope="row">{{ $c->id }}</th>
+            <td>{{ $c->nom }}</td>
+            <td>
+
+                <a class="btn btn-outline-primary btn-sm" href=" {{ route("editar_categoria", ['id' => $c->id ]) }} ">Editar</a>
+            </td>
+        </tr>
+
+
+        @endforeach
+    </tbody>
+</table>
+@stop
