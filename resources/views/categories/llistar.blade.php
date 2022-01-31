@@ -6,10 +6,13 @@ Llistat Categories
 
 
 @section('title_block')
+<hr>
 Llistat Categories
+<hr>
 @stop
 
 @section('contingut')
+<a class="btn btn-success mb-2" href=" {{ route("afegir_categoria") }} ">Afegir</a>
 <table class="table">
     <thead>
         <tr>

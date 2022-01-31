@@ -6,7 +6,9 @@ Llistat Productes
 
 
 @section('title_block')
+<hr>
 Llistat Productes
+<hr>
 @stop
 
 @section('contingut')
