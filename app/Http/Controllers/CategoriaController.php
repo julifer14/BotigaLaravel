@@ -34,7 +34,7 @@ class CategoriaController extends Controller
             return redirect()->route('llistar_categories');
         }
 
-        
+
         return view("categories/editar", [
             'categoria' => $categoria
         ]);
@@ -50,5 +50,20 @@ class CategoriaController extends Controller
         $categoria->nom = $request->nom;
         $categoria->save();
         return redirect()->route('llistar_categories');
+    }
+
+    public function eliminar(Request $request, $id)
+    {
+        $categoria = Categoria::where('id', $id)->first();
+        if ($request->isMethod("POST")) {
+            
+            $categoria->delete();
+            return redirect()->route('llistar_categories');
+        }
+        
+
+        return view("categories/eliminar", [
+            'categoria' => $categoria
+        ]);
     }
 }

@@ -24,8 +24,8 @@ Llistat Categories
             <th scope="row">{{ $c->id }}</th>
             <td>{{ $c->nom }}</td>
             <td>
-
                 <a class="btn btn-outline-primary btn-sm" href=" {{ route("editar_categoria", ['id' => $c->id ]) }} ">Editar</a>
+                <a class="btn btn-outline-danger btn-sm" href=" {{ route("eliminar_categoria", ['id' => $c->id ]) }} ">Eliminar</a>
             </td>
         </tr>
 
