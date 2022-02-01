@@ -12,6 +12,8 @@ Llistat Productes
 @stop
 
 @section('contingut')
+<a class="btn btn-success mb-2" href=" {{ route("afegir_producte") }} ">Afegir</a>
+
 <table class="table">
     <thead>
         <tr>

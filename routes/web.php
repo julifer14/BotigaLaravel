@@ -37,6 +37,9 @@ Route::post('/categories/{id}/eliminar', [CategoriaController::class,'eliminar']
 //#####################      Productes     ########################################################################
 
 Route::get('/productes', [ProducteController::class,'llistar'])->name("llistar_productes");
+Route::get('/productes/afegir', [ProducteController::class,'afegir'])->name("afegir_producte");
+Route::post('/productes/afegir', [ProducteController::class,'afegir'])->name("afegir_producte_save");
+
 Route::get('/productes/{id}', [ProducteController::class,'fitxa'])->name("fitxa_producte");
 
 
