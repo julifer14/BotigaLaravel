@@ -14,4 +14,12 @@ class ProducteController extends Controller
             'productes' => $productes
         ]);
     }
+
+    public function fitxa($id){
+        $producte = Producte::where('id', $id)->first();
+
+        return view('productes/fitxa',[
+            'producte' => $producte
+        ]);
+    }
 }

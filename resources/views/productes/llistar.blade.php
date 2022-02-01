@@ -30,7 +30,7 @@ Llistat Productes
             <td>{{ $producte->preu }}</td>
             <td>{{ $producte->categoria->nom }}</td>
             <td>
-                
+                <a class="btn btn-outline-info btn-sm" href=" {{ route("fitxa_producte", ['id' => $producte->id ]) }} ">Fitxa</a>
             </td>
         </tr>
 

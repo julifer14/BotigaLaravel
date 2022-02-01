@@ -34,4 +34,10 @@ Route::post('/categories/{id}/eliminar', [CategoriaController::class,'eliminar']
 
 //##################################################################################################################################
 
+//#####################      Productes     ########################################################################
+
 Route::get('/productes', [ProducteController::class,'llistar'])->name("llistar_productes");
+Route::get('/productes/{id}', [ProducteController::class,'fitxa'])->name("fitxa_producte");
+
+
+//##################################################################################################################################
