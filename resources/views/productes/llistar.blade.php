@@ -33,6 +33,8 @@ Llistat Productes
             <td>{{ $producte->categoria->nom }}</td>
             <td>
                 <a class="btn btn-outline-info btn-sm" href=" {{ route("fitxa_producte", ['id' => $producte->id ]) }} ">Fitxa</a>
+                <a class="btn btn-outline-primary btn-sm" href=" {{ route("editar_producte", ['id' => $producte->id ]) }} ">Editar</a>
+                <a class="btn btn-outline-danger btn-sm" href=" {{ route("eliminar_producte", ['id' => $producte->id ]) }} ">Eliminar</a>
             </td>
         </tr>
 

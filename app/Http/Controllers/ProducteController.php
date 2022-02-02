@@ -51,6 +51,7 @@ class ProducteController extends Controller
 
     public function editar(Request $request,$id)
     {
+        $producte = Producte::where('id', $id)->first();
         if ($request->isMethod("POST")) {
             $validated = $request->validate([
                 'nom' => ['required'],
@@ -58,7 +59,7 @@ class ProducteController extends Controller
                 'preu' => ['required'],
                 'categories' => ['required'],
             ]);
-            $producte = Producte::where('id', $id)->first();
+            
             $producte->nom = $validated['nom'];
             $producte->descripcio = $validated['descripcio'];
             $producte->preu = $validated['preu'];
@@ -69,7 +70,8 @@ class ProducteController extends Controller
         $categories = Categoria::all();
 
         return view("productes/editar", [
-            'categories' => $categories
+            'categories' => $categories,
+            'producte' => $producte
         ]);
     }
 
