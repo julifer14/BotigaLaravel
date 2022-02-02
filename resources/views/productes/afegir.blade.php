@@ -22,7 +22,7 @@ Afegir producte
 
 @section('contingut')
 
-<form action="{{route("afegir_producte_save")}}" method="post">
+<form action="{{route("afegir_producte")}}" method="post">
     @csrf
     <div class=" mb-3">
         <label class="form-label" for="nom">Nom del producte:</label>

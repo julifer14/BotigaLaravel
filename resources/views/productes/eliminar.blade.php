@@ -1,12 +1,12 @@
 @extends('base')
 
 @section('title')
-Eliminar categoria
+Eliminar producte
 @stop
 
 
 @section('title_block')
-Eliminar categoria
+Eliminar producte
 @stop
 
 
@@ -22,9 +22,9 @@ Eliminar categoria
 
 @section('contingut')
 
-<form action="{{ route("eliminar_categoria", ['id' => $categoria->id ]) }}" method="post">
+<form action="{{ route("eliminar_producte", ['id' => $producte->id ]) }}" method="post">
     @csrf
-    <p class="danger">Esteu segurs que voleu eliminar la categoria {{$categoria->nom}}? </p>
+    <p class="danger">Esteu segurs que voleu eliminar el producte {{$producte->nom}}? </p>
     
     <button class="btn btn-danger" type="submit">Eliminar</button>
     

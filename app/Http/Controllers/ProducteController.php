@@ -32,9 +32,33 @@ class ProducteController extends Controller
                 'nom' => ['required'],
                 'descripcio' => ['required'],
                 'preu' => ['required'],
-                'categories' => ['required'],
+                'categoria' => ['required'],
             ]);
             $producte = new Producte();
+            $producte->nom = $validated['nom'];
+            $producte->descripcio = $validated['descripcio'];
+            $producte->preu = $validated['preu'];
+            $producte->categoria_id = $validated['categoria'];
+            $producte->save();
+            return redirect()->route('llistar_productes');
+        }
+        $categories = Categoria::all();
+
+        return view("productes/afegir", [
+            'categories' => $categories
+        ]);
+    }
+
+    public function editar(Request $request,$id)
+    {
+        if ($request->isMethod("POST")) {
+            $validated = $request->validate([
+                'nom' => ['required'],
+                'descripcio' => ['required'],
+                'preu' => ['required'],
+                'categories' => ['required'],
+            ]);
+            $producte = Producte::where('id', $id)->first();
             $producte->nom = $validated['nom'];
             $producte->descripcio = $validated['descripcio'];
             $producte->preu = $validated['preu'];
@@ -44,8 +68,23 @@ class ProducteController extends Controller
         }
         $categories = Categoria::all();
 
-        return view("productes/afegir", [
+        return view("productes/editar", [
             'categories' => $categories
+        ]);
+    }
+
+
+    public function eliminar(Request $request, $id)
+    {
+        $producte = Producte::where('id', $id)->first();
+        if ($request->isMethod("POST")) {
+            
+            $producte->delete();
+            return redirect()->route('llistar_productes');
+        }
+
+        return view("productes/eliminar", [
+            'producte' => $producte
         ]);
     }
 }
