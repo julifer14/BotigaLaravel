@@ -26,15 +26,15 @@ Editar producte
     @csrf
     <div class=" mb-3">
         <label class="form-label" for="nom">Nom del producte:</label>
-        <input class="form-text form-control form-control-lg" type="text" value={{$producte->nom}} id="nom" name="nom">
+        <input class="form-text form-control form-control-lg" type="text" value="{{$producte->nom}}" id="nom" name="nom">
     </div>
     <div class=" mb-3">
         <label class="form-label" for="descripcio">Descripció:</label>
-        <input class="form-text form-control form-control-lg" type="text" value={{$producte->descripcio}} id="descripcio" name="descripcio">
+        <input class="form-text form-control form-control-lg" type="text" value="{{$producte->descripcio}}" id="descripcio" name="descripcio">
     </div>
     <div class=" mb-3">
         <label class="form-label" for="preu">Preu:</label>
-        <input class="form-control form-control-lg" type="number" step="0.01" value={{$producte->preu}} id="preu" name="preu">
+        <input class="form-control form-control-lg" type="number" step="0.01" value="{{$producte->preu}}" id="preu" name="preu">
     </div>
     <div class="">
         <label class="form-label" for="categories">Categoria: </label>

@@ -57,13 +57,13 @@ class ProducteController extends Controller
                 'nom' => ['required'],
                 'descripcio' => ['required'],
                 'preu' => ['required'],
-                'categories' => ['required'],
+                'categoria' => ['required'],
             ]);
             
             $producte->nom = $validated['nom'];
             $producte->descripcio = $validated['descripcio'];
             $producte->preu = $validated['preu'];
-            $producte->categoria_id = $validated['categories'];
+            $producte->categoria_id = $validated['categoria'];
             $producte->save();
             return redirect()->route('llistar_productes');
         }
