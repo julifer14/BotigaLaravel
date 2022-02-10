@@ -15,36 +15,46 @@ use App\Http\Controllers\ProducteController;
 |
 */
 
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
+
+
 Route::get('/', function () {
     return view('index');
 });
 
 //#####################      Categories     ########################################################################
 
-Route::match(['get','post'],'/categories', [CategoriaController::class,'llistar'])->name("llistar_categories");
+Route::match(['get','post'],'/dashboard/categories', [CategoriaController::class,'llistar'])->middleware(['auth'])->name("llistar_categories");
 
 
-Route::get('/categories/afegir', [CategoriaController::class,'afegir'])->name("afegir_categoria");
-Route::post('/categories',[CategoriaController::class,'guardar'])->name("guardar_categoria");
+Route::get('/dashboard/categories/afegir', [CategoriaController::class,'afegir'])->middleware(['auth'])->name("afegir_categoria");
+Route::post('/dashboard/categories',[CategoriaController::class,'guardar'])->middleware(['auth'])->name("guardar_categoria");
 
-Route::match(['get','post'],'/categories/{id}/editar', [CategoriaController::class,'editar'])->name("editar_categoria");
+Route::match(['get','post'],'/dashboard/categories/{id}/editar', [CategoriaController::class,'editar'])->middleware(['auth'])->name("editar_categoria");
 
-Route::match(['get','post'],'/categories/{id}/eliminar', [CategoriaController::class,'eliminar'])->name("eliminar_categoria");
+Route::match(['get','post'],'/dashboard/categories/{id}/eliminar', [CategoriaController::class,'eliminar'])->middleware(['auth'])->name("eliminar_categoria");
 
 //##################################################################################################################################
 
 //#####################      Productes     ########################################################################
 
-Route::get('/productes', [ProducteController::class,'llistar'])->name("llistar_productes");
+Route::get('/dashboard/productes', [ProducteController::class,'llistar'])->middleware(['auth'])->name("llistar_productes");
 
-Route::match(['get','post'],'/productes/afegir', [ProducteController::class,'afegir'])->name("afegir_producte");
+Route::match(['get','post'],'/dashboard/productes/afegir', [ProducteController::class,'afegir'])->middleware(['auth'])->name("afegir_producte");
 //Route::post('/productes/afegir', [ProducteController::class,'afegir'])->name("afegir_producte_save");
 
-Route::match(['get','post'],'/productes/{id}/editar', [ProducteController::class,'editar'])->name("editar_producte");
+Route::match(['get','post'],'/dashboard/productes/{id}/editar', [ProducteController::class,'editar'])->middleware(['auth'])->name("editar_producte");
 //Route::post('/productes/{id}/editar', [ProducteController::class,'editar'])->name("editar_producte_save");
 
-Route::get('/productes/{id}', [ProducteController::class,'fitxa'])->name("fitxa_producte");
+Route::get('/dashboard/productes/{id}', [ProducteController::class,'fitxa'])->middleware(['auth'])->name("fitxa_producte");
 
-Route::match(['get','post'],'/productes/{id}/eliminar', [ProducteController::class,'eliminar'])->name("eliminar_producte");
+Route::match(['get','post'],'/dashboard/productes/{id}/eliminar', [ProducteController::class,'eliminar'])->middleware(['auth'])->name("eliminar_producte");
 
 //##################################################################################################################################
+

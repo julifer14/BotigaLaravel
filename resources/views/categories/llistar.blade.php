@@ -5,6 +5,8 @@ Llistat Categories
 @stop
 
 
+
+
 @section('title_block')
 <hr>
 Llistat Categories

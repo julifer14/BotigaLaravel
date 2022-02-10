@@ -1,4 +1,4 @@
-@extends('base')
+@extends('dashboard')
 
 @section('title')
 Eliminar categoria

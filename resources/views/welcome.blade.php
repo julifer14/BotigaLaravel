@@ -1,12 +1,12 @@
 @extends('base')
 
 @section('title')
-Publica!
+HOLA!
 @stop
 
 
 @section('title_block')
-INDEX!
+HOLA!
 @stop
 
 @section('contingut')

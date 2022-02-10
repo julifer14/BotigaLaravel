@@ -6,7 +6,7 @@ Publica!
 
 
 @section('title_block')
-INDEX!
+HOLA!
 @stop
 
 @section('contingut')
