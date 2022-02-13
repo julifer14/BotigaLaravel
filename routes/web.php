@@ -15,7 +15,9 @@ use App\Http\Controllers\ProducteController;
 |
 */
 
-
+Route::get('/', function () {
+    return view('index');
+})->name('index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,9 +26,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('/', function () {
-    return view('index');
-});
+
 
 //#####################      Categories     ########################################################################
 
