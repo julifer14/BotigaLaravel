@@ -63,3 +63,5 @@ Route::match(['get','post'],'/dashboard/productes/{id}/eliminar', [ProducteContr
 
 
 Route::match(['get','post'],'/dashboard/cistella', [CistellaController::class,'mostrar_cistella'])->middleware(['auth'])->name("mostrar_cistella");
+
+Route::post('dashboard/cistella/{cistella_id}/eliminar/{producte_id}',[CistellaController::class,'eliminar'])->middleware(['auth'])->name("eliminar_producte_cistella");

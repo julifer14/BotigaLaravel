@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use App\Models\Cistella;
+use App\Models\LiniaCistella;
 
 class CistellaController extends Controller
 {
@@ -15,5 +17,16 @@ class CistellaController extends Controller
         return view('cistella/mostrar_cistella', [
             'cistella' => $user->cistella
         ]);
+    }
+
+    public function eliminar(Request $request, $cistella_id, $producte_id)
+    {
+        $cistella = Cistella::where('id', $cistella_id)->first();
+        if (Auth::user()->id == $cistella->user->id) {
+            $linia = LiniaCistella::where('producte_id', $producte_id)->first();
+
+            $linia->delete();
+            return redirect()->route('mostrar_cistella');
+        }
     }
 }

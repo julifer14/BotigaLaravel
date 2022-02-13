@@ -31,7 +31,19 @@ Cistella de l'usuari
             <td>{{ $linia->producte->nom }}</td>
             <td>{{ $linia->producte->preu }} €</td>
             <td>{{ $linia->quantitat }}</td>
-            <td> ELIMINAR</td>
+            <td>
+
+                <form method="POST" action="{{ route('eliminar_producte_cistella', ['cistella_id' => $cistella->id ,'producte_id'=>$linia->producte->id]) }}">
+                    @csrf
+
+                    <button class="btn btn-outline-danger btn-sm" href="#" onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                        {{ __('Eliminar') }}
+                    </button>
+                </form>
+
+
+            </td>
         </tr>
 
 
