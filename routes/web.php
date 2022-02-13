@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\CistellaController;
 use App\Http\Controllers\ProducteController;
 
 /*
@@ -58,3 +59,7 @@ Route::match(['get','post'],'/dashboard/productes/{id}/eliminar', [ProducteContr
 
 //##################################################################################################################################
 
+//#####################      Cistella     ########################################################################
+
+
+Route::match(['get','post'],'/dashboard/cistella', [CistellaController::class,'mostrar_cistella'])->middleware(['auth'])->name("mostrar_cistella");

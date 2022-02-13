@@ -29,6 +29,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route("llistar_categories") }}">Categories</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route("mostrar_cistella") }}">Cistella</a>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link disabled">Disabled</a>
