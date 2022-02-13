@@ -32,12 +32,14 @@ class ProducteController extends Controller
                 'nom' => ['required'],
                 'descripcio' => ['required'],
                 'preu' => ['required'],
+                'stock' => ['required'],
                 'categoria' => ['required'],
             ]);
             $producte = new Producte();
             $producte->nom = $validated['nom'];
             $producte->descripcio = $validated['descripcio'];
             $producte->preu = $validated['preu'];
+            $producte->stock = $validated['stock'];
             $producte->categoria_id = $validated['categoria'];
             $producte->save();
             return redirect()->route('llistar_productes');
@@ -58,11 +60,13 @@ class ProducteController extends Controller
                 'descripcio' => ['required'],
                 'preu' => ['required'],
                 'categoria' => ['required'],
+                'stock'=>['required']
             ]);
             
             $producte->nom = $validated['nom'];
             $producte->descripcio = $validated['descripcio'];
             $producte->preu = $validated['preu'];
+            $producte->stock = $validated['stock'];
             $producte->categoria_id = $validated['categoria'];
             $producte->save();
             return redirect()->route('llistar_productes');

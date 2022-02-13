@@ -36,6 +36,10 @@ Afegir producte
         <label class="form-label" for="preu">Preu:</label>
         <input class="form-control form-control-lg" type="number" step="0.01" id="preu" name="preu">
     </div>
+    <div class=" mb-3">
+        <label class="form-label" for="stock">Stock:</label>
+        <input class="form-control form-control-lg" type="number" step="0.01" id="stock" name="stock">
+    </div>
     <div class="">
         <label class="form-label" for="categories">Categoria: </label>
         <select name="categoria" id="categoria" class="form-select form-control form-control-lg">
