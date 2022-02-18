@@ -32,9 +32,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route("mostrar_cistella") }}">Cistella</a>
                     </li>
-
+                    
                     <li class="nav-item">
                         <a class="nav-link disabled">Disabled</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route("llistat_productes_public") }}">Productes Públic</a>
                     </li>
                     @auth
                     <li class="nav-item dropdown">

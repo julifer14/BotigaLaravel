@@ -16,6 +16,13 @@ class ProducteController extends Controller
         ]);
     }
 
+    public function llistat_public(){
+        $productes = Producte::all();
+        return view('productes/llistat_public',[
+            'productes' => $productes
+        ]);
+    }
+
     public function fitxa($id)
     {
         $producte = Producte::where('id', $id)->first();

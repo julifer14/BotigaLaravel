@@ -1,13 +1,13 @@
 @extends('base')
 
 @section('title')
-Llistat Productes
+[ADMIN] Llistat Productes
 @stop
 
 
 @section('title_block')
 <hr>
-Llistat Productes
+[ADMIN] Llistat Productes
 <hr>
 @stop
 

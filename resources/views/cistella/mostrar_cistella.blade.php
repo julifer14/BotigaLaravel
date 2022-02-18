@@ -33,7 +33,7 @@ Cistella de l'usuari
             <td>{{ $linia->quantitat }}</td>
             <td>
 
-                <form method="POST" action="{{ route('eliminar_producte_cistella', ['cistella_id' => $cistella->id ,'producte_id'=>$linia->producte->id]) }}">
+                <form method="POST" action="{{ route('eliminar_producte_cistella', ['linia_id'=>$linia->id]) }}">
                     @csrf
 
                     <button class="btn btn-outline-danger btn-sm" href="#" onclick="event.preventDefault();

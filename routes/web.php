@@ -57,6 +57,8 @@ Route::get('/dashboard/productes/{id}', [ProducteController::class,'fitxa'])->mi
 
 Route::match(['get','post'],'/dashboard/productes/{id}/eliminar', [ProducteController::class,'eliminar'])->middleware(['auth'])->name("eliminar_producte");
 
+Route::get('/productes',[ProducteController::class,'llistat_public'])->name("llistat_productes_public");
+
 //##################################################################################################################################
 
 //#####################      Cistella     ########################################################################
@@ -64,4 +66,6 @@ Route::match(['get','post'],'/dashboard/productes/{id}/eliminar', [ProducteContr
 
 Route::match(['get','post'],'/dashboard/cistella', [CistellaController::class,'mostrar_cistella'])->middleware(['auth'])->name("mostrar_cistella");
 
-Route::post('dashboard/cistella/{cistella_id}/eliminar/{producte_id}',[CistellaController::class,'eliminar'])->middleware(['auth'])->name("eliminar_producte_cistella");
+Route::post('dashboard/cistella/{linia_id}/eliminar',[CistellaController::class,'eliminar'])->middleware(['auth'])->name("eliminar_producte_cistella");
+
+Route::post('productes/{id}/afegir',[CistellaController::class,'afegir'])->middleware(['auth'])->name("afegir_producte_cistella");
