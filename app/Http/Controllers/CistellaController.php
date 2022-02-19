@@ -44,7 +44,7 @@ class CistellaController extends Controller
         $linia->cistella_id = $user->cistella_id;
         $linia->producte_id = $producte_id;
         $linia->save();
-        return redirect()->route('llistat_productes_public');
+        return redirect()->route('mostrar_cistella');
 
         // $cistella->
     }

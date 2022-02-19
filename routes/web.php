@@ -66,6 +66,6 @@ Route::get('/productes',[ProducteController::class,'llistat_public'])->name("lli
 
 Route::match(['get','post'],'/dashboard/cistella', [CistellaController::class,'mostrar_cistella'])->middleware(['auth'])->name("mostrar_cistella");
 
-Route::post('dashboard/cistella/{linia_id}/eliminar',[CistellaController::class,'eliminar'])->middleware(['auth'])->name("eliminar_producte_cistella");
+Route::post('/dashboard/cistella/{linia_id}/eliminar',[CistellaController::class,'eliminar'])->middleware(['auth'])->name("eliminar_producte_cistella");
 
-Route::post('productes/{id}/afegir',[CistellaController::class,'afegir'])->middleware(['auth'])->name("afegir_producte_cistella");
+Route::post('/productes/{id}/afegir',[CistellaController::class,'afegir'])->middleware(['auth'])->name("afegir_producte_cistella");

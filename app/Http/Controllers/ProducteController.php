@@ -41,13 +41,19 @@ class ProducteController extends Controller
                 'preu' => ['required'],
                 'stock' => ['required'],
                 'categoria' => ['required'],
+                //'image' => ['required',"mimes : png , jpg , jpeg"]
             ]);
+            
+            $imageName = time().'.'.$request->image->extension();  
+            $request->image->move(public_path('images'), $imageName);
+
             $producte = new Producte();
             $producte->nom = $validated['nom'];
             $producte->descripcio = $validated['descripcio'];
             $producte->preu = $validated['preu'];
             $producte->stock = $validated['stock'];
             $producte->categoria_id = $validated['categoria'];
+            $producte->image = $imageName;
             $producte->save();
             return redirect()->route('llistar_productes');
         }
@@ -69,11 +75,16 @@ class ProducteController extends Controller
                 'categoria' => ['required'],
                 'stock'=>['required']
             ]);
+
+            $imageName = time().'.'.$request->image->extension();  
+            $request->image->move(public_path('images'), $imageName);
+
             
             $producte->nom = $validated['nom'];
             $producte->descripcio = $validated['descripcio'];
             $producte->preu = $validated['preu'];
             $producte->stock = $validated['stock'];
+            $producte->image = $imageName;
             $producte->categoria_id = $validated['categoria'];
             $producte->save();
             return redirect()->route('llistar_productes');

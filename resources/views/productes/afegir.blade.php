@@ -22,7 +22,7 @@ Afegir producte
 
 @section('contingut')
 
-<form action="{{route("afegir_producte")}}" method="post">
+<form action="{{route("afegir_producte")}}" method="post" enctype="multipart/form-data" >
     @csrf
     <div class=" mb-3">
         <label class="form-label" for="nom">Nom del producte:</label>
@@ -39,6 +39,10 @@ Afegir producte
     <div class=" mb-3">
         <label class="form-label" for="stock">Stock:</label>
         <input class="form-control form-control-lg" type="number" step="0.01" id="stock" name="stock">
+    </div>
+    <div class=" mb-3">
+        <label class="form-label" for="image">Imatge:</label>
+        <input class="form-control form-control-lg" type="file"  id="image" name="image">
     </div>
     <div class="">
         <label class="form-label" for="categories">Categoria: </label>

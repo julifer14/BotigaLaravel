@@ -22,7 +22,7 @@ Editar producte
 
 @section('contingut')
 
-<form action="{{route("editar_producte",['id'=>$producte->id])}}" method="post">
+<form action="{{route("editar_producte",['id'=>$producte->id])}}" method="post"  enctype="multipart/form-data">
     @csrf
     <div class=" mb-3">
         <label class="form-label" for="nom">Nom del producte:</label>
@@ -39,6 +39,10 @@ Editar producte
     <div class=" mb-3">
         <label class="form-label" for="stock">Stock:</label>
         <input class="form-control form-control-lg" type="number" step="0.01" value="{{$producte->stock}}" id="stock" name="stock">
+    </div>
+    <div class=" mb-3">
+        <label class="form-label" for="image">Imatge:</label>
+        <input class="form-control form-control-lg" type="file"  id="image" value="{{$producte->image}}" name="image">
     </div>
     <div class="">
         <label class="form-label" for="categories">Categoria: </label>

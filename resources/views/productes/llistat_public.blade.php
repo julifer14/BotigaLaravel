@@ -18,7 +18,7 @@ Llistat Productes
     @foreach ($productes as $producte)
     <div class="col-sm-6" style="width: 18rem;">
         <div class="card">
-            <img src="https://openclipart.org/image/400px/211811" class="card-img-top" alt="default">
+            <img src="/images/{{ $producte->image }}" class="card-img-top" alt="No image">
             <div class="card-body">
                 <h5 class="card-title">{{ $producte->nom }}</h5>
                 <h6>{{ $producte->categoria->nom }}</h6>
