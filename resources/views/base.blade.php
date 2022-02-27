@@ -24,11 +24,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="{{ route("llistar_productes") }}">Productes</a>
+                        <a class="nav-link" href="{{ route("llistat_productes_public") }}">Productes Públic</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route("llistar_categories") }}">Categories</a>
-                    </li>
+                    @auth
+
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route("mostrar_cistella") }}">Cistella</a>
                     </li>
@@ -36,20 +36,33 @@
                     <li class="nav-item">
                         <a class="nav-link disabled">Disabled</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route("llistat_productes_public") }}">Productes Públic</a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ADMIN
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+
+
+                            <li><a class="dropdown-item" href="{{ route("llistar_productes") }}">Productes</a></li>
+                            <li><a class="dropdown-item" href="{{ route("llistar_categories") }}">Categories</a></li>
+
+
+                        </ul>
                     </li>
-                    @auth
+                    @endauth
+
+
+                </ul>
+                @auth
+
+
+                <ul class="navbar-nav">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ Auth::user()->name }}
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-                            <!--<li><a class="dropdown-item" href="/categories">Llistat categories</a></li>
-                        <li><a class="dropdown-item" href="/categories/afegir">Afegir categoria</a></li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>-->
                             <li>
 
                                 <form method="POST" action="{{ route('logout') }}">
@@ -64,9 +77,18 @@
 
                         </ul>
                     </li>
-                    @endauth
-
                 </ul>
+                @endauth
+
+
+                @guest
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                        <a class="nav-link" href=" {{ route("login") }}"">Login</a>
+                    </li>
+                </ul>
+                @endguest
+
 
             </div>
 
@@ -78,31 +100,31 @@
 
 
 
-    <div class="row">
-        <div class="col">
-            <h1 class="m-0">
+    <div class=" row">
+                            <div class="col">
+                                <h1 class="m-0">
 
-                @yield('title_block')
-            </h1>
-        </div>
+                                    @yield('title_block')
+                                </h1>
+                            </div>
 
-    </div>
-    <div class="row">
-        <div class="col">
-            <section class="content">
-                @yield('contingut')
-            </section>
-        </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <section class="content">
+                        @yield('contingut')
+                    </section>
+                </div>
 
-    </div>
-
-
+            </div>
 
 
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
 
 </html>

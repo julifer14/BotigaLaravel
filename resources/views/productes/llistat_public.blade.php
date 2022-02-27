@@ -16,7 +16,7 @@ Llistat Productes
 <div class="row">
 
     @foreach ($productes as $producte)
-    <div class="col-sm-6" style="width: 18rem;">
+    <div class="col-sm-6 pb-4" style="width: 18rem;">
         <div class="card">
             <img src="/images/{{ $producte->image }}" class="card-img-top" alt="No image">
             <div class="card-body">
