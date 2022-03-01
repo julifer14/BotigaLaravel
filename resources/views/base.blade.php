@@ -29,9 +29,7 @@
                     @auth
 
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route("mostrar_cistella") }}">Cistella</a>
-                    </li>
+
 
                     <li class="nav-item">
                         <a class="nav-link disabled">Disabled</a>
@@ -41,6 +39,7 @@
                         <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             ADMIN
                         </a>
+
                         <ul class="dropdown-menu" aria-labelledby="adminDropdown">
 
 
@@ -49,8 +48,8 @@
 
 
                         </ul>
-                    </li>
-                    @endauth
+
+                        @endauth
 
 
                 </ul>
@@ -58,6 +57,9 @@
 
 
                 <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route("mostrar_cistella") }}">Cistella</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {{ Auth::user()->name }}
