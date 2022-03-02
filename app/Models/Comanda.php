@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Comanda extends Model
 {
     use HasFactory;
+
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function LiniaComanda(){
+        return $this->hasMany(LiniaComanda::class);
+    }
 }

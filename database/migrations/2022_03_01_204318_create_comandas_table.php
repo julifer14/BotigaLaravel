@@ -18,6 +18,14 @@ class CreateComandasTable extends Migration
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('estat');
+            /**
+             * 0 -> Pendent
+             * 1 -> Preparant
+             * 2 -> Enviada
+             * 3 -> Completada
+             */
+
         });
     }
 

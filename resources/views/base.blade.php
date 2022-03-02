@@ -45,7 +45,7 @@
 
                             <li><a class="dropdown-item" href="{{ route("llistar_productes") }}">Productes</a></li>
                             <li><a class="dropdown-item" href="{{ route("llistar_categories") }}">Categories</a></li>
-
+                            <li><a class="dropdown-item" href="{{ route("llistar_comandes") }}">Comandes</a></li>
 
                         </ul>
 
